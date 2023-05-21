@@ -33,11 +33,15 @@ export async function getContact(contactId) {
   return contact;
 }
 
-export async function addContact(contact) {
-  await addDoc(contactsRef, {
+export async function addContact(contactInfo) {
+  const docRef = await addDoc(contactsRef, {
     createdAt: Timestamp.fromDate(new Date()),
-    ...contact,
+    ...contactInfo,
   });
+
+  const docSnap = await getDoc(docRef);
+  const contact = { id: docSnap.id, ...docSnap.data() };
+  return contact;
 }
 
 export async function updateContact(contactId, updates) {
@@ -51,10 +55,14 @@ export async function updateContact(contactId, updates) {
     };
   }
 
-  await setDoc(docRef, {
+  const newDocRef = await setDoc(docRef, {
     updatedAt: Timestamp.fromDate(new Date()),
     updates,
   });
+
+  const newDocSnap = await getDoc(newDocRef);
+  const contact = { id: newDocSnap.id, ...newDocSnap.data() };
+  return contact;
 }
 
 export async function deleteContact(contactId) {

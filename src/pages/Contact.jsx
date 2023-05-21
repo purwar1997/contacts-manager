@@ -30,7 +30,7 @@ export default function Contact() {
 
         <p>{contact.notes}</p>
 
-        <div className='contact-btns'>
+        <div className='btn-group'>
           <Link to='edit' className='btn edit'>
             Edit
           </Link>

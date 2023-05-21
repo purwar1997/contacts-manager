@@ -1,13 +1,18 @@
-import { Form, redirect } from 'react-router-dom';
+import { Form, redirect, useNavigate } from 'react-router-dom';
 import { addContact } from '../api';
 
 export async function action({ request }) {
   const formData = await request.formData();
   const contact = Object.fromEntries(formData.entries());
-  await addContact(contact);
+  contact.twitter = `https://twitter.com/${contact.twitter.slice(1)}`;
+
+  const addedContact = await addContact(contact);
+  return redirect(`/contact/${addedContact.id}`);
 }
 
 export default function AddContact() {
+  const navigate = useNavigate();
+
   return (
     <Form className='add-contact-form' method='post'>
       <div className='name'>
@@ -36,14 +41,14 @@ export default function AddContact() {
 
       <div className='notes'>
         <label htmlFor='notes'>Notes</label>
-        <textarea name='notes' id='notes'></textarea>
+        <textarea name='notes' id='notes' />
       </div>
 
-      <div className='add-contact-btns'>
+      <div className='btn-group'>
         <button className='btn save' type='submit'>
           Add
         </button>
-        <button className='btn' type='button'>
+        <button className='btn' type='button' onClick={() => navigate('-1')}>
           Cancel
         </button>
       </div>

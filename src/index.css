@@ -20,11 +20,6 @@ a {
   color: #1b1b1b;
 }
 
-main {
-  height: 100vh;
-  display: flex;
-}
-
 input,
 textarea {
   width: 100%;
@@ -32,7 +27,6 @@ textarea {
   border-radius: 6px;
   border: 1px solid #e3e3e3;
   box-shadow: 0px 1px 2px #e3e3e3;
-  background-color: #fff;
   font-size: 16px;
 }
 
@@ -55,20 +49,9 @@ textarea:focus {
   outline: 1.5px solid #1b1b1b;
 }
 
-.btn {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid #e3e3e3;
-  box-shadow: 0px 1px 2px #e3e3e3;
-  background-color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.btn:hover {
-  cursor: pointer;
-  border: 1px solid #cdcdcd;
+.root {
+  height: 100vh;
+  display: flex;
 }
 
 .sidebar {
@@ -99,6 +82,22 @@ textarea:focus {
   height: 40px;
 }
 
+.btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e3e3e3;
+  box-shadow: 0px 1px 2px #e3e3e3;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  border: 1px solid #cdcdcd;
+}
+
 .sidebar-top > a {
   color: #3992ff;
 }
@@ -125,7 +124,7 @@ textarea:focus {
   font-weight: 400;
 }
 
-.favorite-star {
+.favorite {
   font-size: 11px;
   color: #eeb004;
 }
@@ -238,7 +237,7 @@ textarea:focus {
   font-size: 17px;
 }
 
-.contact-btns {
+.btn-group {
   margin-top: 10px;
   display: flex;
   gap: 10px;
@@ -276,8 +275,8 @@ label {
 }
 
 .add-contact-form > div:last-of-type {
-  display: flex;
   gap: 10px;
   margin-top: 20px;
-  margin-left: 120px;
+  position: relative;
+  left: 120px;
 }

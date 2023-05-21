@@ -10,10 +10,9 @@ export async function loader() {
 
 export default function Root() {
   const contacts = useLoaderData();
-  console.log(contacts);
 
   return (
-    <main>
+    <main className='root'>
       <section className='sidebar'>
         <div className='sidebar-top'>
           <Form>
@@ -33,7 +32,7 @@ export default function Root() {
                     <h1>
                       {contact.firstname} {contact.lastname}
                     </h1>
-                    {contact.favorite && <BsStarFill className='favorite-star' />}
+                    {contact.favorite && <BsStarFill className='favorite' />}
                   </nav>
                 </Link>
               ))}
