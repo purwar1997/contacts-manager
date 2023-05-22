@@ -1,7 +1,7 @@
 import { redirect } from 'react-router-dom';
 import { deleteContact } from '../api';
 
-export async function loader({ params }) {
+export async function action({ params }) {
   const isConfirmed = confirm('This contact will be deleted permanently. Do you want to proceed?');
 
   if (isConfirmed) {

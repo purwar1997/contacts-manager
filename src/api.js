@@ -55,12 +55,12 @@ export async function updateContact(contactId, updates) {
     };
   }
 
-  const newDocRef = await setDoc(docRef, {
+  await setDoc(docRef, {
     updatedAt: Timestamp.fromDate(new Date()),
-    updates,
+    ...updates,
   });
 
-  const newDocSnap = await getDoc(newDocRef);
+  const newDocSnap = await getDoc(docRef);
   const contact = { id: newDocSnap.id, ...newDocSnap.data() };
   return contact;
 }

@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from 'react-router-dom';
+import { Form, useLoaderData } from 'react-router-dom';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import { getContact } from '../api';
 
@@ -24,19 +24,23 @@ export default function Contact() {
           <button>{contact.favorite ? <BsStarFill className='starred' /> : <BsStar />}</button>
         </div>
 
-        <a href={contact.twitter} target='_blank'>
+        <a href={`https://twitter.com/${contact.twitter.slice(1)}`} target='_blank'>
           {contact.twitter}
         </a>
 
         <p>{contact.notes}</p>
 
         <div className='btn-group'>
-          <Link to='edit' className='btn edit'>
-            Edit
-          </Link>
-          <Link to='delete' className='btn delete'>
-            Delete
-          </Link>
+          <Form action='edit'>
+            <button className='btn edit' type='submit'>
+              Edit
+            </button>
+          </Form>
+          <Form action='delete' method='delete'>
+            <button className='btn delete' type='submit'>
+              Delete
+            </button>
+          </Form>
         </div>
       </div>
     </section>

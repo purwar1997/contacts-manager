@@ -233,12 +233,13 @@ textarea:focus {
 }
 
 .contact-details > p {
-  margin-top: 10px;
-  font-size: 17px;
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .btn-group {
-  margin-top: 10px;
+  margin-top: 8px;
   display: flex;
   gap: 10px;
 }
@@ -252,7 +253,7 @@ textarea:focus {
   color: #f64250;
 }
 
-.add-contact-form {
+.contact-form {
   width: 100%;
   max-width: 700px;
 }
@@ -262,19 +263,19 @@ label {
   margin-top: 5px;
 }
 
-.add-contact-form > div {
+.contact-form > div {
   margin-bottom: 14px;
   display: flex;
   gap: 40px;
 }
 
-.add-contact-form > div:first-of-type > div {
+.contact-form > div:first-of-type > div {
   width: 100%;
   display: flex;
   gap: 14px;
 }
 
-.add-contact-form > div:last-of-type {
+.contact-form > div:last-of-type {
   gap: 10px;
   margin-top: 20px;
   position: relative;
