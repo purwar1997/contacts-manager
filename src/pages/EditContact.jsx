@@ -1,21 +1,25 @@
-import { useLoaderData, redirect } from 'react-router-dom';
+import { Suspense } from 'react';
+import { useLoaderData, redirect, defer, Await } from 'react-router-dom';
 import { getContact, updateContact } from '../api';
 import ContactForm from '../components/ContactForm';
 
 export async function loader({ params }) {
-  const contact = await getContact(params.id);
-  return contact;
+  return defer({ contact: getContact(params.id) });
 }
 
 export async function action({ request, params }) {
   const formData = await request.formData();
-  const contact = Object.fromEntries(formData.entries());
-  await updateContact(params.id, contact);
+  const updates = Object.fromEntries(formData.entries());
+  await updateContact(params.id, updates);
   return redirect(`/contacts/${params.id}`);
 }
 
 export default function EditContact() {
-  const contact = useLoaderData();
+  const { contact } = useLoaderData();
 
-  return <ContactForm contact={contact} />;
+  return (
+    <Suspense fallback={<p>Loading contact...</p>}>
+      <Await resolve={contact}>{contact => <ContactForm contact={contact} />}</Await>
+    </Suspense>
+  );
 }

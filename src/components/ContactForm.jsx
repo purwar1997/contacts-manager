@@ -52,7 +52,7 @@ export default function ContactForm({ contact }) {
         <button className='btn save' type='submit'>
           Save
         </button>
-        <button className='btn' type='button' onClick={() => navigate('-1')}>
+        <button className='btn' type='button' onClick={() => navigate(-1)}>
           Cancel
         </button>
       </div>

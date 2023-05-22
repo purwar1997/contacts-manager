@@ -7,7 +7,7 @@ import {
 
 import Root, { loader as rootLoader } from './pages/Root';
 import Index from './pages/Index';
-import Contact, { loader as contactLoader } from './pages/Contact';
+import Contact, { loader as contactLoader, action as contactAction } from './pages/Contact';
 import AddContact, { action as addAction } from './pages/AddContact';
 import EditContact, { loader as editLoader, action as editAction } from './pages/EditContact';
 import { action as deleteAction } from './pages/DeleteContact';
@@ -20,7 +20,12 @@ const router = createBrowserRouter(
       <Route errorElement={<Error />}>
         <Route index element={<Index />} />
         <Route path='contacts/add' element={<AddContact />} action={addAction} />
-        <Route path='contacts/:id' element={<Contact />} loader={contactLoader} />
+        <Route
+          path='contacts/:id'
+          element={<Contact />}
+          loader={contactLoader}
+          action={contactAction}
+        />
         <Route
           path='contacts/:id/edit'
           element={<EditContact />}

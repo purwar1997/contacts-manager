@@ -9,5 +9,5 @@ export async function action({ params }) {
     return redirect('/');
   }
 
-  return null;
+  return redirect(`/contacts/${params.id}`);
 }

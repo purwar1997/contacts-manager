@@ -6,19 +6,37 @@ import {
   getDoc,
   addDoc,
   Timestamp,
-  setDoc,
+  updateDoc,
   deleteDoc,
 } from 'firebase/firestore';
 
 const contactsRef = collection(db, 'contacts');
 
-export async function getContacts() {
+async function delay() {
+  return new Promise((resolve, _reject) => setTimeout(resolve, 2000));
+}
+
+export async function getContacts(query) {
+  await delay();
+
   const querySnapshot = await getDocs(contactsRef);
-  const contacts = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  let contacts = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+
+  if (query) {
+    const search = query.toLowerCase();
+
+    contacts = contacts.filter(
+      ({ firstname, lastname }) =>
+        firstname.toLowerCase().startsWith(search) || lastname.toLowerCase().startsWith(search)
+    );
+  }
+
   return contacts;
 }
 
 export async function getContact(contactId) {
+  await delay();
+
   const docRef = doc(db, 'contacts', contactId);
   const docSnap = await getDoc(docRef);
 
@@ -55,7 +73,7 @@ export async function updateContact(contactId, updates) {
     };
   }
 
-  await setDoc(docRef, {
+  await updateDoc(docRef, {
     updatedAt: Timestamp.fromDate(new Date()),
     ...updates,
   });

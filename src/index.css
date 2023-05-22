@@ -74,12 +74,40 @@ textarea:focus {
   gap: 10px;
 }
 
-.sidebar-top > form {
+.search-form {
   flex: 1;
+  position: relative;
 }
 
-.sidebar-top > form > input {
+.search-form > input {
+  padding-inline-start: 35px;
   height: 40px;
+}
+
+.icon {
+  font-size: 17px;
+  color: #515151;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+}
+
+.spinner {
+  font-size: 14px;
+  animation: spin 1s linear infinite;
+}
+
+.loading {
+  visibility: hidden;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(306deg);
+  }
 }
 
 .btn {
@@ -106,10 +134,18 @@ textarea:focus {
   flex: 1;
 }
 
+.contacts-list > p {
+  margin-top: 10px;
+  color: #515151;
+}
+
+.contacts > nav {
+  margin-bottom: 8px;
+}
+
 .contact {
   border-radius: 8px;
   padding: 12px 15px;
-  margin-bottom: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -132,6 +168,14 @@ textarea:focus {
 .active {
   background-color: #2b63fd;
   color: #fff;
+}
+
+.active > .favorite {
+  color: inherit;
+}
+
+.active:hover {
+  background-color: #2b63fd;
 }
 
 .sidebar-bottom {
@@ -194,7 +238,6 @@ textarea:focus {
 }
 
 .contact-details {
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -212,7 +255,7 @@ textarea:focus {
   font-weight: 400;
 }
 
-.contact-details > div > button {
+.contact-details > :first-of-type button {
   background-color: transparent;
   border: none;
   font-size: 18px;
