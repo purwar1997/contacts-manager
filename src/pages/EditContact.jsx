@@ -18,7 +18,7 @@ export default function EditContact() {
   const { contact } = useLoaderData();
 
   return (
-    <Suspense fallback={<p>Loading contact...</p>}>
+    <Suspense fallback={<p>Loading contact details...</p>}>
       <Await resolve={contact}>{contact => <ContactForm contact={contact} />}</Await>
     </Suspense>
   );

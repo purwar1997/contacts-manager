@@ -17,7 +17,7 @@ export default function Contact() {
   const { contact } = useLoaderData();
 
   return (
-    <Suspense fallback={<p>Loading contact...</p>}>
+    <Suspense fallback={<p>Loading contact details...</p>}>
       <Await resolve={contact}>
         {contact => (
           <section className='contact-profile'>

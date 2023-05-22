@@ -13,6 +13,7 @@
 body {
   height: 100vh;
   color: #1b1b1b;
+  overflow: hidden;
 }
 
 a {
@@ -49,6 +50,7 @@ textarea:focus {
   outline: 1.5px solid #1b1b1b;
 }
 
+/* Root page */
 .root {
   height: 100vh;
   display: flex;
@@ -202,6 +204,7 @@ textarea:focus {
   padding: 40px 60px;
 }
 
+/* Index page */
 .index-page {
   margin-top: 30px;
   color: #818181;
@@ -225,6 +228,7 @@ textarea:focus {
   margin-bottom: 15px;
 }
 
+/* Contact page */
 .contact-profile {
   display: flex;
   gap: 30px;
@@ -296,6 +300,7 @@ textarea:focus {
   color: #f64250;
 }
 
+/* Add Contact and Edit Contact pages */
 .contact-form {
   width: 100%;
   max-width: 700px;
@@ -323,4 +328,40 @@ label {
   margin-top: 20px;
   position: relative;
   left: 120px;
+}
+
+/* Error page */
+.error-page {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.error-page > h1 {
+  font-size: 35px;
+}
+
+.error-message {
+  font-style: italic;
+  color: #818181;
+}
+
+/* Not Found page */
+.not-found-page {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.not-found-page > h1 {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.not-found-page > a {
+  font-weight: 400;
 }

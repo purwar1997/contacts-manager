@@ -16,26 +16,28 @@ import NotFound from './pages/NotFound';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<Root />} loader={rootLoader} errorElement={<Error />}>
-      <Route errorElement={<Error />}>
-        <Route index element={<Index />} />
-        <Route path='contacts/add' element={<AddContact />} action={addAction} />
-        <Route
-          path='contacts/:id'
-          element={<Contact />}
-          loader={contactLoader}
-          action={contactAction}
-        />
-        <Route
-          path='contacts/:id/edit'
-          element={<EditContact />}
-          loader={editLoader}
-          action={editAction}
-        />
-        <Route path='contacts/:id/delete' action={deleteAction} />
+    <>
+      <Route path='/' element={<Root />} loader={rootLoader} errorElement={<Error />}>
+        <Route errorElement={<Error />}>
+          <Route index element={<Index />} />
+          <Route path='contacts/add' element={<AddContact />} action={addAction} />
+          <Route
+            path='contacts/:id'
+            element={<Contact />}
+            loader={contactLoader}
+            action={contactAction}
+          />
+          <Route
+            path='contacts/:id/edit'
+            element={<EditContact />}
+            loader={editLoader}
+            action={editAction}
+          />
+          <Route path='contacts/:id/delete' action={deleteAction} />
+        </Route>
       </Route>
       <Route path='*' element={<NotFound />} />
-    </Route>
+    </>
   )
 );
 

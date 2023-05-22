@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 export default function NotFound() {
   return (
     <section className='not-found-page'>
-      <h1>Sorry, the page you were looking for wa not found.</h1>
-      <Link to='..' relative='path'>
+      <h1>Sorry, the page you were looking for was not found.</h1>
+      <Link to='..' relative='path' className='btn'>
         Back to previous page
       </Link>
     </section>
