@@ -4,9 +4,9 @@ import ContactForm from '../components/ContactForm';
 
 export async function action({ request }) {
   const formData = await request.formData();
-  const contact = Object.fromEntries(formData.entries());
-  const addedContact = await addContact(contact);
-  return redirect(`/contacts/${addedContact.id}`);
+  const contactInfo = Object.fromEntries(formData.entries());
+  const contact = await addContact(contactInfo);
+  return redirect(`/contacts/${contact.id}`);
 }
 
 export default function AddContact() {

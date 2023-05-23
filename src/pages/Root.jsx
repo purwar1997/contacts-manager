@@ -51,10 +51,10 @@ export default function Root() {
                 });
               }}
             />
-            <div className={`icon search ${searching ? 'loading' : ''}`}>
+            <div className={`icon search ${searching ? 'hide' : ''}`}>
               <IoSearchOutline />
             </div>
-            <div className={`icon spinner ${searching ? '' : 'loading'}`}>
+            <div className={`icon spinner ${searching ? '' : 'hide'}`}>
               <FiRefreshCw />
             </div>
           </Form>
