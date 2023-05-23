@@ -1,0 +1,68 @@
+.skeleton {
+  background-color: rgb(210, 210, 210);
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.skeleton-post {
+  display: flex;
+  gap: 25px;
+}
+
+.skeleton-post > div:last-of-type {
+  width: 100%;
+}
+
+.skeleton.image {
+  width: 200px;
+  height: 180px;
+}
+
+.skeleton.title {
+  height: 55px;
+}
+
+.skeleton.text {
+  height: 25px;
+}
+
+.skeleton-form {
+  width: 800px;
+  display: flex;
+  gap: 25px;
+}
+
+.skeleton-form > div:last-of-type {
+  width: 100%;
+}
+
+.skeleton.label {
+  width: 200px;
+  height: 325px;
+}
+
+.skeleton.input {
+  height: 40px;
+}
+
+.skeleton.text-area {
+  height: 160px;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}

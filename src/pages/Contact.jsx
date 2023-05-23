@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Form, useFetcher, useLoaderData, defer, Await } from 'react-router-dom';
 import { BsStar, BsStarFill } from 'react-icons/bs';
 import { getContact, updateContact } from '../api';
+import SkeletonPost from '../components/skeletons/SkeletonPost';
 
 export async function loader({ params }) {
   return defer({ contact: getContact(params.id) });
@@ -17,7 +18,7 @@ export default function Contact() {
   const { contact } = useLoaderData();
 
   return (
-    <Suspense fallback={<p>Loading contact details...</p>}>
+    <Suspense fallback={<SkeletonPost />}>
       <Await resolve={contact}>
         {contact => (
           <section className='contact-profile'>

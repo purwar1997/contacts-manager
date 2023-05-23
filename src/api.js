@@ -12,13 +12,7 @@ import {
 
 const contactsRef = collection(db, 'contacts');
 
-async function delay() {
-  return new Promise((resolve, _reject) => setTimeout(resolve, 2000));
-}
-
 export async function getContacts(query) {
-  await delay();
-
   const querySnapshot = await getDocs(contactsRef);
   let contacts = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
@@ -35,8 +29,6 @@ export async function getContacts(query) {
 }
 
 export async function getContact(contactId) {
-  await delay();
-
   const docRef = doc(db, 'contacts', contactId);
   const docSnap = await getDoc(docRef);
 

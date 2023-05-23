@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { useLoaderData, redirect, defer, Await } from 'react-router-dom';
 import { getContact, updateContact } from '../api';
 import ContactForm from '../components/ContactForm';
+import SkeletonForm from '../components/skeletons/SkeletonForm';
 
 export async function loader({ params }) {
   return defer({ contact: getContact(params.id) });
@@ -18,7 +19,7 @@ export default function EditContact() {
   const { contact } = useLoaderData();
 
   return (
-    <Suspense fallback={<p>Loading contact details...</p>}>
+    <Suspense fallback={<SkeletonForm />}>
       <Await resolve={contact}>{contact => <ContactForm contact={contact} />}</Await>
     </Suspense>
   );
