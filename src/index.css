@@ -10,15 +10,27 @@
   box-sizing: border-box;
 }
 
+:root {
+  --TEXT-COLOR: #1b1b1b;
+  --BORDER-COLOR: #e3e3e3;
+  --BORDER-COLOR-HOVER: #cdcdcd;
+  --OUTLINE-COLOR: #1b1b1b;
+  --BOX-SHADOW: #e3e3e3;
+  --ICON-COLOR: #515151;
+  --STAR-COLOR: #eeb004;
+  --BTN-COLOR: #3992ff;
+  --ACTIVE-COLOR: #2b63fd;
+}
+
 body {
   height: 100vh;
-  color: #1b1b1b;
+  color: var(--TEXT-COLOR);
   overflow: hidden;
 }
 
 a {
   text-decoration: none;
-  color: #1b1b1b;
+  color: var(--TEXT-COLOR);
 }
 
 input,
@@ -26,8 +38,8 @@ textarea {
   width: 100%;
   padding-inline: 10px;
   border-radius: 6px;
-  border: 1px solid #e3e3e3;
-  box-shadow: 0px 1px 2px #e3e3e3;
+  border: 1px solid var(--BORDER-COLOR);
+  box-shadow: 0px 1px 2px var(--BOX-SHADOW);
   font-size: 16px;
 }
 
@@ -42,12 +54,12 @@ textarea {
 
 input:hover,
 textarea:hover {
-  border: 1px solid #cdcdcd;
+  border: 1px solid var(--BORDER-COLOR-HOVER);
 }
 
 input:focus,
 textarea:focus {
-  outline: 1.5px solid #1b1b1b;
+  outline: 1.5px solid var(--OUTLINE-COLOR);
 }
 
 /* Root page */
@@ -60,7 +72,7 @@ textarea:focus {
   width: 25vw;
   min-width: 250px;
   background-color: #f7f7f7;
-  border-right: 1px solid #e3e3e3;
+  border-right: 1px solid var(--BORDER-COLOR);
   display: flex;
   flex-direction: column;
 }
@@ -70,7 +82,7 @@ textarea:focus {
 }
 
 .sidebar-top {
-  border-bottom: 1px solid #e3e3e3;
+  border-bottom: 1px solid var(--BORDER-COLOR);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -88,7 +100,7 @@ textarea:focus {
 
 .icon {
   font-size: 17px;
-  color: #515151;
+  color: var(--ICON-COLOR);
   position: absolute;
   top: 12px;
   left: 10px;
@@ -115,8 +127,8 @@ textarea:focus {
 .btn {
   padding: 8px 12px;
   border-radius: 6px;
-  border: 1px solid #e3e3e3;
-  box-shadow: 0px 1px 2px #e3e3e3;
+  border: 1px solid var(--BORDER-COLOR);
+  box-shadow: 0px 1px 2px var(--BOX-SHADOW);
   background-color: #fff;
   font-size: 16px;
   font-weight: 600;
@@ -124,11 +136,11 @@ textarea:focus {
 
 .btn:hover {
   cursor: pointer;
-  border: 1px solid #cdcdcd;
+  border: 1px solid var(--BORDER-COLOR-HOVER);
 }
 
 .sidebar-top > a {
-  color: #3992ff;
+  color: var(--BTN-COLOR);
 }
 
 .contacts-list {
@@ -163,11 +175,11 @@ textarea:focus {
 
 .contact .favorite {
   font-size: 11px;
-  color: #eeb004;
+  color: var(--STAR-COLOR);
 }
 
 .contact.active {
-  background-color: #2b63fd;
+  background-color: var(--ACTIVE-COLOR);
   color: #fff;
 }
 
@@ -176,11 +188,11 @@ textarea:focus {
 }
 
 .contact.active:hover {
-  background-color: #2b63fd;
+  background-color: var(--ACTIVE-COLOR);
 }
 
 .sidebar-bottom {
-  border-top: 1px solid #e3e3e3;
+  border-top: 1px solid var(--BORDER-COLOR);
 }
 
 .sidebar-bottom > h1 {
@@ -264,16 +276,16 @@ textarea:focus {
 }
 
 .contact-details > :first-child button:hover {
-  color: #eeb004;
+  color: var(--STAR-COLOR);
 }
 
 .starred {
-  color: #eeb004;
+  color: var(--STAR-COLOR);
 }
 
 .contact-details > a {
   font-size: 20px;
-  color: #2b63fd;
+  color: var(--ACTIVE-COLOR);
 }
 
 .contact-details > p {
@@ -290,7 +302,7 @@ textarea:focus {
 
 .edit,
 .save {
-  color: #3992ff;
+  color: var(--BTN-COLOR);
 }
 
 .delete {
