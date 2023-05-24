@@ -339,8 +339,8 @@ label {
   left: 120px;
 }
 
-/* Error page */
-.error-page {
+/* Error component */
+.error-container {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -348,7 +348,7 @@ label {
   gap: 30px;
 }
 
-.error-page > h1 {
+.error-container > h1 {
   font-size: 35px;
 }
 

@@ -11,7 +11,7 @@ import Contact, { loader as contactLoader, action as contactAction } from './pag
 import AddContact, { action as addAction } from './pages/AddContact';
 import EditContact, { loader as editLoader, action as editAction } from './pages/EditContact';
 import { action as deleteAction } from './pages/DeleteContact';
-import Error from './pages/Error';
+import Error from './components/Error';
 import NotFound from './pages/NotFound';
 
 const router = createBrowserRouter(
