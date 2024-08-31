@@ -248,6 +248,7 @@ textarea:focus {
   height: 200px;
   border-radius: 15px;
   object-fit: cover;
+  border: 1px solid #cbcbcb
 }
 
 .contact-details {

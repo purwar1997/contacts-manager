@@ -20,22 +20,19 @@ const router = createBrowserRouter(
       <Route path='/' element={<Root />} loader={rootLoader} errorElement={<Error />}>
         <Route errorElement={<Error />}>
           <Route index element={<Index />} />
+
           <Route path='contacts/add' element={<AddContact />} action={addAction} />
-          <Route
-            path='contacts/:id'
-            element={<Contact />}
-            loader={contactLoader}
-            action={contactAction}
-          />
-          <Route
-            path='contacts/:id/edit'
-            element={<EditContact />}
-            loader={editLoader}
-            action={editAction}
-          />
-          <Route path='contacts/:id/delete' action={deleteAction} />
+
+          <Route path='contacts/:id'>
+            <Route index element={<Contact />} loader={contactLoader} action={contactAction} />
+
+            <Route path='edit' element={<EditContact />} loader={editLoader} action={editAction} />
+
+            <Route path='delete' action={deleteAction} />
+          </Route>
         </Route>
       </Route>
+
       <Route path='*' element={<NotFound />} />
     </>
   )
