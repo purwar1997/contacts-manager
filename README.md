@@ -12,7 +12,9 @@
 
 ## 1. Overview
 
-A simple CRUD application that allows users to manage their contacts. It is built with React and uses Firebase Firestore to store data.
+A simple CRUD application that allows users to manage their contacts. It is built with React and utilises Firebase Firestore to store data.
+
+![preview](./src/media/preview.png)
 
 ## 2. Main Features
 
@@ -26,9 +28,8 @@ A simple CRUD application that allows users to manage their contacts. It is buil
 
 - Vite to initialize React project
 - Vanilla CSS to style UI components
-- React router v6 to implement client side routing
-- Loaders and actions provided by react-router-v6 to fetch and update data
-- Firestore database of firebase to store data
+- React Router v6 to implement client side routing
+- Firestore database of Firebase to store data
 - Vercel for deployment
 
 ## 4. Deployed Link
