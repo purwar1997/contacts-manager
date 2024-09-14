@@ -14,7 +14,7 @@
 
 A simple CRUD application that allows users to manage their contacts. It is built with React and utilises Firebase Firestore to store data.
 
-![preview](./src/media/preview.png)
+![preview](./media/preview.png)
 
 ## 2. Main Features
 
