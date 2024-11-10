@@ -13,11 +13,11 @@
 
 ## 1. Overview
 
-A CRUD application that allows users to manage their contacts. It is built with `React` and utilises `Firebase Firestore` to store data.
+A CRUD application that allows users to manage their contacts. It is built with `React` and utilizes `Firebase Firestore` for data storage.
 
 ## 2. Live Demo
 
-To checkout the **live demo video** of contacts manager, click on the below image.
+To checkout the **live demo video** of contacts manager, click on the image below.
 
 [![preview](./media/preview.png)](https://www.youtube.com/watch?v=tBZmHsY6MAo)
 
@@ -38,5 +38,5 @@ Contacts manager is deployed on Vercel. **Live link** of the deployed project - 
 - Vite to initialize React project
 - Vanilla CSS to style UI components
 - React Router v6 to implement client side routing
-- Firestore database of Firebase to store data
+- Firebase Firestore for data storage
 - Vercel for deployment
