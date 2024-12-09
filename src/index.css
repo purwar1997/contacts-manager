@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI';
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
 }
 
@@ -131,7 +131,7 @@ textarea:focus {
   box-shadow: 0px 1px 2px var(--BOX-SHADOW);
   background-color: #fff;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .btn:hover {
@@ -196,8 +196,8 @@ textarea:focus {
 }
 
 .sidebar-bottom > h1 {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .sidebar-bottom > h1::before {
@@ -248,7 +248,7 @@ textarea:focus {
   height: 200px;
   border-radius: 15px;
   object-fit: cover;
-  border: 1px solid #cbcbcb
+  border: 1px solid #cbcbcb;
 }
 
 .contact-details {
