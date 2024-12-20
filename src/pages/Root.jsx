@@ -13,7 +13,7 @@ import {
 import { BsStarFill } from 'react-icons/bs';
 import { IoSearchOutline } from 'react-icons/io5';
 import { FiRefreshCw } from 'react-icons/fi';
-import { getContacts } from '../api';
+import { getContacts } from '../services/contacts';
 
 export async function loader({ request }) {
   const query = new URL(request.url).searchParams.get('query');

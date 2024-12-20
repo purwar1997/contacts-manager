@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Form, useFetcher, useLoaderData, defer, Await } from 'react-router-dom';
 import { BsStar, BsStarFill } from 'react-icons/bs';
-import { getContact, updateContact } from '../api';
+import { getContact, updateContact } from '../services/contacts';
 import SkeletonPost from '../components/skeletons/SkeletonPost';
 
 export async function loader({ params }) {
@@ -14,7 +14,7 @@ export async function action({ request, params }) {
   return await updateContact(params.id, updates);
 }
 
-export default function Contact() {
+export default function ContactDetails() {
   const { contact } = useLoaderData();
 
   return (

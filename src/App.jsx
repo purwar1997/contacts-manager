@@ -7,12 +7,15 @@ import {
 
 import Root, { loader as rootLoader } from './pages/Root';
 import Index from './pages/Index';
-import Contact, { loader as contactLoader, action as contactAction } from './pages/Contact';
+import ContactDetails, {
+  loader as contactLoader,
+  action as contactAction,
+} from './pages/ContactDetails';
 import AddContact, { action as addAction } from './pages/AddContact';
 import EditContact, { loader as editLoader, action as editAction } from './pages/EditContact';
 import { action as deleteAction } from './pages/DeleteContact';
-import Error from './components/Error';
-import NotFound from './pages/NotFound';
+import ErrorPage from './pages/Error';
+import PageNotFound from './pages/PageNotFound';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,7 +27,12 @@ const router = createBrowserRouter(
           <Route path='contacts/add' element={<AddContact />} action={addAction} />
 
           <Route path='contacts/:id'>
-            <Route index element={<Contact />} loader={contactLoader} action={contactAction} />
+            <Route
+              index
+              element={<ContactDetails />}
+              loader={contactLoader}
+              action={contactAction}
+            />
 
             <Route path='edit' element={<EditContact />} loader={editLoader} action={editAction} />
 
@@ -33,7 +41,7 @@ const router = createBrowserRouter(
         </Route>
       </Route>
 
-      <Route path='*' element={<NotFound />} />
+      <Route path='*' element={<PageNotFound />} />
     </>
   )
 );

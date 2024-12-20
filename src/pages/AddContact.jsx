@@ -1,5 +1,5 @@
 import { redirect } from 'react-router-dom';
-import { addContact } from '../api';
+import { addContact } from '../services/contacts';
 import ContactForm from '../components/ContactForm';
 
 export async function action({ request }) {

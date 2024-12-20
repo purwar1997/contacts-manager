@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { useLoaderData, redirect, defer, Await } from 'react-router-dom';
-import { getContact, updateContact } from '../api';
+import { getContact, updateContact } from '../services/contacts';
 import ContactForm from '../components/ContactForm';
 import SkeletonForm from '../components/skeletons/SkeletonForm';
 
