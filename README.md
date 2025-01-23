@@ -6,8 +6,8 @@
 ## 0. Table of Contents
 
 1. [Overview](#1-overview)
-2. [Live Demo](#2-live-demo)
-3. [Live Link](#3-live-link)
+2. [Live Deployment](#2-live-deployment)
+3. [Demo Video](#3-demo-video)
 4. [Main Features](#4-main-features)
 5. [Tools and technologies used](#5-tools-and-technologies-used)
 
@@ -15,15 +15,15 @@
 
 A CRUD application that allows users to manage their contacts. It is built with `React` and utilizes `Firebase Firestore` for data storage.
 
-## 2. Live Demo
+## 2. Live Deployment
 
-To checkout the **live demo video** of contacts manager, click on the image below.
+Contacts Manager is deployed on Vercel. `Live link` of the deployed project - [click here](https://contacts-manager-gamma.vercel.app/).
 
-[![preview](./media/preview.png)](https://www.youtube.com/watch?v=tBZmHsY6MAo)
+## 3. Demo Video
 
-## 3. Live Link
+Demo video of the project is uploaded on youtube. To watch the demo video, [click here](https://youtu.be/HRjqmb6qN68).
 
-Contacts manager is deployed on Vercel. **Live link** of the deployed project - [click here](https://contacts-manager-gamma.vercel.app/).
+[![Preview](./media/preview.png)](https://youtu.be/HRjqmb6qN68)
 
 ## 4. Main Features
 
